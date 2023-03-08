@@ -16,52 +16,40 @@ final class MovieQuizViewController: UIViewController {
     
     struct QuizQuestion {
         let image: String
-        let text: String
+        let text: String = "Рейтинг этого фильма больше чем 6?"
         let correctAnswer: Bool
     }
-    
-    static let questionText: String = "Рейтинг этого фильма больше чем 6?"
     
     private let questions: [QuizQuestion] = [
         QuizQuestion(
             image: "The Godfather",
-            text: MovieQuizViewController.questionText,
             correctAnswer: true),
         QuizQuestion(
             image: "The Dark Knight",
-            text: MovieQuizViewController.questionText,
             correctAnswer: true),
         QuizQuestion(
             image: "Kill Bill",
-            text: MovieQuizViewController.questionText,
             correctAnswer: true),
         QuizQuestion(
             image: "The Avengers",
-            text: MovieQuizViewController.questionText,
             correctAnswer: true),
         QuizQuestion(
             image: "Deadpool",
-            text: MovieQuizViewController.questionText,
             correctAnswer: true),
         QuizQuestion(
             image: "The Green Knight",
-            text: MovieQuizViewController.questionText,
             correctAnswer: true),
         QuizQuestion(
             image: "Old",
-            text: MovieQuizViewController.questionText,
             correctAnswer: false),
         QuizQuestion(
             image: "The Ice Age Adventures of Buck Wild",
-            text: MovieQuizViewController.questionText,
             correctAnswer: false),
         QuizQuestion(
             image: "Tesla",
-            text: MovieQuizViewController.questionText,
             correctAnswer: false),
         QuizQuestion(
             image: "Vivarium",
-            text: MovieQuizViewController.questionText,
             correctAnswer: false)
     ]
     
