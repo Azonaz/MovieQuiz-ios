@@ -87,8 +87,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     
     private func show(quiz result: QuizResultsViewModel) {
         var statisticInfo: String = ""
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        let dateFormatter = DateFormatter.quizResultsDateFormatter()
         func alertAction() {
             currentQuestionIndex = 0
             correctAnswers = 0

@@ -1,8 +1,7 @@
-import Foundation
 import UIKit
 
-class AlertPresenter {
-    let model: AlertModel
+final class AlertPresenter {
+    private let model: AlertModel
     weak var viewController: UIViewController?
     
     init(model: AlertModel, viewController: UIViewController?) {
