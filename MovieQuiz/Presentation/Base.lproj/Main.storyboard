@@ -124,17 +124,32 @@
                                     <constraint firstItem="YFs-ea-83U" firstAttribute="centerX" secondItem="QaD-2L-yxQ" secondAttribute="centerX" id="sHq-un-tsO"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-5N-rHa">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="0oE-DU-kAT" userLabel="height &gt;= 50"/>
+                                    <constraint firstAttribute="width" constant="20" id="9xM-VV-w8g" userLabel="width &gt;= 50"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4rV-Yc-0yE"/>
                         <color key="backgroundColor" name="ypBlack"/>
                         <constraints>
+                            <constraint firstItem="2Uh-5N-rHa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HZp-aC-DPC"/>
                             <constraint firstItem="QaD-2L-yxQ" firstAttribute="top" secondItem="4rV-Yc-0yE" secondAttribute="top" constant="10" id="In0-qZ-R3D"/>
                             <constraint firstItem="QaD-2L-yxQ" firstAttribute="bottom" secondItem="4rV-Yc-0yE" secondAttribute="bottom" constant="10" id="QPE-Ao-IhX"/>
                             <constraint firstItem="4rV-Yc-0yE" firstAttribute="trailing" secondItem="QaD-2L-yxQ" secondAttribute="trailing" constant="20" id="h78-ii-4qT"/>
                             <constraint firstItem="QaD-2L-yxQ" firstAttribute="leading" secondItem="4rV-Yc-0yE" secondAttribute="leading" constant="20" id="jwS-Q1-Grz"/>
+                            <constraint firstItem="2Uh-5N-rHa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xdR-Uc-UjF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="2Uh-5N-rHa" id="W5M-xu-wcM"/>
                         <outlet property="counterLabel" destination="DlI-Mf-EW0" id="KLU-9s-B8J"/>
                         <outlet property="imageView" destination="YFs-ea-83U" id="at4-ed-ZqM"/>
                         <outlet property="noButton" destination="qUL-Ig-7fR" id="9hP-PS-6XN"/>

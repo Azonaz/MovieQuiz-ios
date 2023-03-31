@@ -6,10 +6,10 @@ struct AlertModel {
     let buttonText: String
     let completion: () -> Void
     
-    init(quizResult: QuizResultsViewModel, statisticInfo: String, completion: @escaping () -> Void) {
-            self.title = quizResult.title
-            self.message = quizResult.text + statisticInfo
-            self.buttonText = quizResult.buttonText
-            self.completion = completion
-        }
+    init(title: String, message: String, buttonText: String, completion: @escaping ()->Void) {
+        self.title = title
+        self.message = message
+        self.buttonText = buttonText 
+        self.completion = completion
+    }
 }
