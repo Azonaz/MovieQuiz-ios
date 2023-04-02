@@ -62,8 +62,7 @@ final class StatisticServiceImplementation: StatisticService {
         guard let correctData = userDefaults.data(forKey: Keys.correct.rawValue),
               let correct = try? JSONDecoder().decode(Int.self, from: correctData),
               let totalData = userDefaults.data(forKey: Keys.total.rawValue),
-              let total = try? JSONDecoder().decode(Int.self, from: totalData),
-              total > 0 else {
+              let total = try? JSONDecoder().decode(Int.self, from: totalData) else {
             return 0
         }
         return Double(correct) / Double(total) * 100
