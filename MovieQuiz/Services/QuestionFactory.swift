@@ -1,47 +1,16 @@
 import Foundation
 
 final class QuestionFactory: QuestionFactoryProtocol {
+   
     private let moviesLoader: MoviesLoading
     private weak var delegate: QuestionFactoryDelegate?
     private var movies: [MostPopularMovie] = []
     private var unusedQuestions: [MostPopularMovie] = []
+    
     init(moviesLoader: MoviesLoading, delegate: QuestionFactoryDelegate) {
         self.moviesLoader = moviesLoader
         self.delegate = delegate
     }
-    
-    //    private let questions: [QuizQuestion] = [
-    //        QuizQuestion(
-    //            image: "The Godfather",
-    //            correctAnswer: true),
-    //        QuizQuestion(
-    //            image: "The Dark Knight",
-    //            correctAnswer: true),
-    //        QuizQuestion(
-    //            image: "Kill Bill",
-    //            correctAnswer: true),
-    //        QuizQuestion(
-    //            image: "The Avengers",
-    //            correctAnswer: true),
-    //        QuizQuestion(
-    //            image: "Deadpool",
-    //            correctAnswer: true),
-    //        QuizQuestion(
-    //            image: "The Green Knight",
-    //            correctAnswer: true),
-    //        QuizQuestion(
-    //            image: "Old",
-    //            correctAnswer: false),
-    //        QuizQuestion(
-    //            image: "The Ice Age Adventures of Buck Wild",
-    //            correctAnswer: false),
-    //        QuizQuestion(
-    //            image: "Tesla",
-    //            correctAnswer: false),
-    //        QuizQuestion(
-    //            image: "Vivarium",
-    //            correctAnswer: false)
-    //    ]
     
     func loadData(){
         self.movies = []
@@ -78,8 +47,10 @@ final class QuestionFactory: QuestionFactoryProtocol {
                 print("Failed to load image")
             }
             let rating = Float(movie.rating) ?? 0
-            let text = "Рейтинг этого фильма больше чем 7?"
-            let correctAnswer = rating > 7
+            let questionRating = Int.random(in: 7...9)
+            let questionValue = Bool.random()
+            let text = questionValue ? "Рейтинг этого фильма больше чем \(questionRating)?" : "Рейтинг этого фильма меньше чем \(questionRating)?"
+            let correctAnswer = questionValue ? rating > Float(questionRating) : rating < Float(questionRating)
             let question = QuizQuestion(image: imageData,
                                         text: text,
                                         correctAnswer: correctAnswer)
@@ -91,3 +62,36 @@ final class QuestionFactory: QuestionFactoryProtocol {
         }
     }
 }
+
+//    private let questions: [QuizQuestion] = [
+//        QuizQuestion(
+//            image: "The Godfather",
+//            correctAnswer: true),
+//        QuizQuestion(
+//            image: "The Dark Knight",
+//            correctAnswer: true),
+//        QuizQuestion(
+//            image: "Kill Bill",
+//            correctAnswer: true),
+//        QuizQuestion(
+//            image: "The Avengers",
+//            correctAnswer: true),
+//        QuizQuestion(
+//            image: "Deadpool",
+//            correctAnswer: true),
+//        QuizQuestion(
+//            image: "The Green Knight",
+//            correctAnswer: true),
+//        QuizQuestion(
+//            image: "Old",
+//            correctAnswer: false),
+//        QuizQuestion(
+//            image: "The Ice Age Adventures of Buck Wild",
+//            correctAnswer: false),
+//        QuizQuestion(
+//            image: "Tesla",
+//            correctAnswer: false),
+//        QuizQuestion(
+//            image: "Vivarium",
+//            correctAnswer: false)
+//    ]
